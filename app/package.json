@@ -1,0 +1,11 @@
+{
+  "name": "react-learning",
+  "version": "1.0.0",
+  "description": "To learn react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "j32u4ukh",
+  "license": "MIT"
+}
