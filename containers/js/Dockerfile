@@ -8,13 +8,7 @@ COPY ./app /usr/src/app
 WORKDIR /usr/src/app
 
 # 安裝項目依賴
-RUN npm install
-
-# ENV NODE_ENV=development
-
-# RUN npx sequelize db:migrate --migrations-path /usr/src/app/migrations
-
-# RUN npx sequelize db:seed:all --seeders-path /usr/src/app/seeders
+RUN npm install -g create-react-app
 
 # 暴露應用程序所使用的端口
 EXPOSE 3000
