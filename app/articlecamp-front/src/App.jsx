@@ -7,7 +7,9 @@ import EditPage from './pages/EditPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
+import ProfilePage from './pages/ProfilePage';
 import RegisterPage from './pages/RegisterPage';
+import UsersPage from './pages/UsersPage';
 
 export default function App() {
   return (
@@ -23,6 +25,9 @@ export default function App() {
           <Route path=':id' element={<ArticlePage />} />
           <Route path=':id/edit' element={<EditPage />} />
         </Route>
+
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/users" element={<UsersPage />} />
         
         {/* 全匹配路由
         設定 Route path="*" 在所有路由的最下方，當上面的路徑都沒有匹配到時，就會顯示此組件，可用於 404 找不到頁面 */}
