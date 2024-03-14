@@ -7,14 +7,8 @@ COPY ./app /usr/src/app
 # 設置工作目錄
 WORKDIR /usr/src/app
 
-# 安裝項目依賴
-RUN npm install
+# # 安裝環境依賴
+# RUN npm install
 
-# ENV NODE_ENV=development
-
-# RUN npx sequelize db:migrate --migrations-path /usr/src/app/migrations
-
-# RUN npx sequelize db:seed:all --seeders-path /usr/src/app/seeders
-
-# 暴露應用程序所使用的端口
-EXPOSE 3000
+# # 暴露應用程序所使用的端口
+# EXPOSE 3000
