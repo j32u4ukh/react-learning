@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MainLayout from './layouts/MainLayout';
+import ArticleLayout from './layouts/ArticleLayout';
 import ArticleListPage from './pages/ArticleListPage';
 import ArticlePage from './pages/ArticlePage';
 import CreatePage from './pages/CreatePage';
@@ -19,7 +19,7 @@ export default function App() {
         <Route path='/login' element={<LoginPage />} />
         <Route path='/register' element={<RegisterPage />} />
 
-        <Route path="/articles" element={<MainLayout />}>
+        <Route path="/articles" element={<ArticleLayout />}>
           <Route index element={<ArticleListPage />} />
           <Route path='create' element={<CreatePage />} />
           <Route path=':id' element={<ArticlePage />} />
