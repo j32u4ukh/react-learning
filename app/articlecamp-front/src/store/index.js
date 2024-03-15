@@ -1,4 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { persistStore } from 'redux-persist';
+import persistedReducer from './slice/persist';
 import userReducer from "./slice/user";
 
 /*
@@ -20,10 +22,17 @@ Redux 流程
 
 configureStore：創建 store 的參數，原生為 creactStore，使用 creactStore 時會有被棄用的警告
 */
-export default configureStore({
+export const store = configureStore({
   reducer: {
     user: userReducer,
+    persistor: persistedReducer,
     // 如有多個檔案，一樣 import 進來，新增在 reducer
     // product: productReducer
   },
+});
+
+export const persistor = persistStore(store, {}, () => {
+  // 當存儲加載完成時執行的回調函數
+  console.log('Redux Persist 已加載完畢');
+  // 在此處執行您想要執行的操作，如更新 UI 狀態等
 });

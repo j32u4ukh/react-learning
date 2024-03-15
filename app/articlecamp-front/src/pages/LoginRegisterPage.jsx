@@ -1,23 +1,25 @@
 
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { login, selectUser } from "../store/slice/user";
+import { selectPersist, setText } from "../store/slice/persist";
+import { selectUser } from "../store/slice/user";
 import { capitalizeFirstLetter } from '../utils';
 
 export default function LoginRegisterPage(props){
     const type = capitalizeFirstLetter(props.type)
-    const states = useSelector(selectUser);
+    const usersState = useSelector(selectUser);
+    const rootState = useSelector(selectPersist);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const isRegister = type === 'Register'
-    console.log(`isLogined: ${states.isLogined}, user: ${JSON.stringify(states.user)}`);
-    const text = localStorage.getItem('text')
-    console.log(`text: ${text}`)
+    // console.log(`isLogined: ${usersState.isLogined}, user: ${JSON.stringify(usersState.user)}`);
+    const text = rootState.text;
+    console.log(`usersState; ${usersState}, rootState: ${rootState}, text: ${text}`)
 
     function loginHandler(){
         console.log('Handle login')
-        dispatch(login({ id: new Date().getTime(), name: 'King' }));
-        localStorage.setItem('text', 'miko')
+        // dispatch(login({ id: new Date().getTime(), name: 'King' }));
+        dispatch(setText('pekomiko'))
         navigate('/register');
     }
 

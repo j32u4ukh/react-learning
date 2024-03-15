@@ -19,7 +19,6 @@ export const userSlice = createSlice({
 
   reducers: {
     login: (state, action) => {
-      console.log(`action: ${JSON.stringify(action)}`)
       state.isLogined = true;
       state.user = action.payload;
     },
