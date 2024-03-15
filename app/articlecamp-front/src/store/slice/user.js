@@ -24,13 +24,13 @@ export const userSlice = createSlice({
     },
     logout: (state, action) => {
         state.isLogined = false;
-        state.user = {name: 'abs'};
+        state.user = null;
     }
   }
 });
 
 // 取用方法
 export const { login, logout } = userSlice.actions; 
-// 取用資料
+// 取用資料(這裡的 user，對應了 configureStore 當中 reducer 的鍵值名稱)
 export const selectUser = (state) => state.user; 
 export default userSlice.reducer;

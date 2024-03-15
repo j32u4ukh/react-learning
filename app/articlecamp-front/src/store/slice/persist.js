@@ -24,7 +24,7 @@ export const persistSlice = createSlice({
 
 // 取用方法
 export const {setText} = persistSlice.actions; 
-// 取用資料
+// 取用資料(這裡的 persistor，對應了 configureStore 當中 reducer 的鍵值名稱)
 export const selectPersist= (state) => state.persistor; 
 
 export default persistReducer(persistConfig, persistSlice.reducer);

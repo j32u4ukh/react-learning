@@ -23,12 +23,17 @@ Redux 流程
 configureStore：創建 store 的參數，原生為 creactStore，使用 creactStore 時會有被棄用的警告
 */
 export const store = configureStore({
+  // 可添加多組 reducer
   reducer: {
     user: userReducer,
     persistor: persistedReducer,
     // 如有多個檔案，一樣 import 進來，新增在 reducer
     // product: productReducer
   },
+  middleware: (getDefaultMiddleware) =>
+  getDefaultMiddleware({
+    serializableCheck: false,
+  }),
 });
 
 export const persistor = persistStore(store, {}, () => {
