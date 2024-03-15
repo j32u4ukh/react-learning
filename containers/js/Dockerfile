@@ -10,5 +10,5 @@ WORKDIR /usr/src/app
 # # 安裝環境依賴
 # RUN npm install
 
-# # 暴露應用程序所使用的端口
-# EXPOSE 3000
+# 暴露應用程序所使用的端口
+EXPOSE 3000

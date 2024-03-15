@@ -8,8 +8,6 @@ export default function ArticlePage(){
     }, []);
 
     return (
-        <>
-            <h1>Article Page # {params.id}</h1>
-        </>
+        <h1>Article Page # {params.id}</h1>
     );
 }
