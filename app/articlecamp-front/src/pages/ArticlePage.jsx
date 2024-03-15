@@ -1,13 +1,21 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function ArticlePage(){
-    const params= useParams();    
+    const navigate = useNavigate();
+    const params = useParams();
+    const articleId = params.id;
+    
     useEffect(()=>{
-        console.log(`Article id: ${params.id}`)
+        // 檢查 id 是否為數字
+        if (isNaN(Number(articleId))) {
+
+            // 如果 id 不是數字，使用 history.replace() 重定向到 NotFoundPage
+            navigate('/NotFound', { replace: true });
+        }
     }, []);
 
     return (
-        <h1>Article Page # {params.id}</h1>
+        <h1>Article Page # {articleId}</h1>
     );
 }
