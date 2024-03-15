@@ -2,8 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ArticleLayout from './layouts/ArticleLayout';
 import ArticleListPage from './pages/ArticleListPage';
 import ArticlePage from './pages/ArticlePage';
-import CreatePage from './pages/CreatePage';
-import EditPage from './pages/EditPage';
+import CreateEditPage from './pages/CreateEditPage';
 import HomePage from './pages/HomePage';
 import LoginRegisterPage from './pages/LoginRegisterPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -22,9 +21,11 @@ export default function App() {
 
         <Route path="/articles" element={<ArticleLayout />}>
           <Route index element={<ArticleListPage />} />
-          <Route path='create' element={<CreatePage />} />
+          {/* <Route path='create' element={<CreatePage />} /> */}
+          <Route path='create' element={<CreateEditPage type='create' />} />
           <Route path=':id' element={<ArticlePage />} />
-          <Route path=':id/edit' element={<EditPage />} />
+          {/* <Route path=':id/edit' element={<EditPage />} /> */}
+          <Route path=':id/edit' element={<CreateEditPage type='edit' />} />
         </Route>
 
         <Route path="/profile" element={<ProfilePage />} />
