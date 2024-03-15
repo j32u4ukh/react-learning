@@ -5,10 +5,9 @@ import ArticlePage from './pages/ArticlePage';
 import CreatePage from './pages/CreatePage';
 import EditPage from './pages/EditPage';
 import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
+import LoginRegisterPage from './pages/LoginRegisterPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ProfilePage from './pages/ProfilePage';
-import RegisterPage from './pages/RegisterPage';
 import UsersPage from './pages/UsersPage';
 
 export default function App() {
@@ -16,8 +15,10 @@ export default function App() {
     <BrowserRouter basename="/">
       <Routes> 
         <Route index element={<HomePage />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/register' element={<RegisterPage />} />
+        {/* <Route path='/login' element={<LoginPage />} />
+        <Route path='/register' element={<RegisterPage />} /> */}
+        <Route path='/login' element={<LoginRegisterPage type='login' />} />
+        <Route path='/register' element={<LoginRegisterPage type='register' />} />
 
         <Route path="/articles" element={<ArticleLayout />}>
           <Route index element={<ArticleListPage />} />
