@@ -1,17 +1,20 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './App.css';
 import NumberPad from './components/NumberPad';
+import { STATUS } from './constant';
 import { Provider } from "./context";
 
 function App() {
   const [input, setInput] = useState('0')
   const [result, setResult] = useState('')
+  const status = useRef(STATUS.NUMBER);
 
   const contextValue = {
     input,
     setInput,
     result,
-    setResult
+    setResult,
+    status
   };
 
   return (
