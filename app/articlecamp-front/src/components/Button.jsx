@@ -1,4 +1,4 @@
-export default function NumberButton(props){
+export default function Button(props){
     const value = props.value ?? ""
     return (
         <button class="button">

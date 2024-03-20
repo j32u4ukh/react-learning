@@ -1,5 +1,5 @@
 import './App.css'
-import NumberButton from './components/NumberButton'
+import Button from './components/Button'
 
 function App() {
   return (
@@ -14,42 +14,26 @@ function App() {
 
       {/* 數字鍵盤 */}
       <section class="numberPad">
-        <NumberButton value="7"/>
-        <NumberButton value="8"/>
-        <NumberButton value="9"/>
-        <button class="button">
-          <p class="operator">/</p>
-        </button>
-        <button class="button">
-          <p class="delete">AC</p>
-        </button>
-        <NumberButton value="4"/>
-        <NumberButton value="5"/>
-        <NumberButton value="6"/>
-        <button class="button">
-          <p class="operator">*</p>
-        </button>
-        <button class="button">
-          <p class="backspace">⬅</p>
-        </button>
-        <NumberButton value="1"/>
-        <NumberButton value="2"/>
-        <NumberButton value="3"/>
-        <button class="button">
-          <p class="operator">-</p>
-        </button>
-        <button class="button">
-          <p class="number"></p>
-        </button>
-        <NumberButton />
-        <NumberButton value="0"/>
-        <NumberButton />
-        <button class="button">
-          <p class="operator">+</p>
-        </button>
-        <button class="button">
-          <p class="getResult">=</p>
-        </button>
+        <Button value="7"/>
+        <Button value="8"/>
+        <Button value="9"/>
+        <Button value="/"/>
+        <Button value="AC"/>
+        <Button value="4"/>
+        <Button value="5"/>
+        <Button value="6"/>
+        <Button value="*"/>
+        <Button value="⬅"/>
+        <Button value="1"/>
+        <Button value="2"/>
+        <Button value="3"/>
+        <Button value="-"/>
+        <Button />
+        <Button />
+        <Button value="0"/>
+        <Button />
+        <Button value="+"/>
+        <Button value="="/>
       </section>
 
     </div>
