@@ -1,10 +1,18 @@
-import { useState } from 'react'
-import './App.css'
-import NumberPad from './components/NumberPad'
+import { useState } from 'react';
+import './App.css';
+import NumberPad from './components/NumberPad';
+import { Provider } from "./context";
 
 function App() {
   const [input, setInput] = useState('0')
   const [result, setResult] = useState('')
+
+  const contextValue = {
+    input,
+    setInput,
+    result,
+    setResult
+  };
 
   return (
     <div className="container">
@@ -16,8 +24,10 @@ function App() {
         <div className="result">{result}</div>
       </section>
 
-      {/* 數字鍵盤 */}
-      <NumberPad />
+      {/* 數字鍵盤: 共用 contextValue 當中的變數 */}
+      <Provider value={contextValue}>
+        <NumberPad />
+      </Provider>
     </div>
   )
 }

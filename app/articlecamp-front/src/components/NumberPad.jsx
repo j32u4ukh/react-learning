@@ -1,7 +1,11 @@
-import Button from './Button'
-import Styles from './number-pad.module.css'
+import { useContext } from 'react';
+import context from "../context";
+import Button from './Button';
+import Styles from './number-pad.module.css';
 
-export default function NumberPad(props){
+export default function NumberPad(){
+    const { input, setInput, result, setResult } = useContext(context);
+
     return (
         <section className={Styles.numberPad}>
             <Button value="7"/>
