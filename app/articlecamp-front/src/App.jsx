@@ -1,4 +1,5 @@
 import './App.css'
+import NumberButton from './components/NumberButton'
 
 function App() {
   return (
@@ -7,68 +8,42 @@ function App() {
       
       {/* 顯示輸入的數字及運算結果 */}
       <section class="panel">
-        <div class="calculationInput">ggg
-        </div>
-        <div class="calculationResult">ggggggg
-        </div>
+        <div class="input">0</div>
+        <div class="result"></div>
       </section>
 
       {/* 數字鍵盤 */}
       <section class="numberPad">
-        <button class="button">
-          <p class="number">7</p>
-        </button>
-        <button class="button">
-          <p class="number">8</p>
-        </button>
-        <button class="button">
-          <p class="number">9</p>
-        </button>
+        <NumberButton value="7"/>
+        <NumberButton value="8"/>
+        <NumberButton value="9"/>
         <button class="button">
           <p class="operator">/</p>
         </button>
         <button class="button">
           <p class="delete">AC</p>
         </button>
-        <button class="button">
-          <p class="number">4</p>
-        </button>
-        <button class="button">
-          <p class="number">5</p>
-        </button>
-        <button class="button">
-          <p class="number">6</p>
-        </button>
+        <NumberButton value="4"/>
+        <NumberButton value="5"/>
+        <NumberButton value="6"/>
         <button class="button">
           <p class="operator">*</p>
         </button>
         <button class="button">
           <p class="backspace">⬅</p>
         </button>
-        <button class="button">
-          <p class="number">1</p>
-        </button>
-        <button class="button">
-          <p class="number">2</p>
-        </button>
-        <button class="button">
-          <p class="number">3</p>
-        </button>
+        <NumberButton value="1"/>
+        <NumberButton value="2"/>
+        <NumberButton value="3"/>
         <button class="button">
           <p class="operator">-</p>
         </button>
         <button class="button">
           <p class="number"></p>
         </button>
-        <button class="button">
-          <p class="number"></p>
-        </button>
-        <button class="button">
-          <p class="number">0</p>
-        </button>
-        <button class="button">
-          <p class="number"></p>
-        </button>
+        <NumberButton />
+        <NumberButton value="0"/>
+        <NumberButton />
         <button class="button">
           <p class="operator">+</p>
         </button>
@@ -76,6 +51,7 @@ function App() {
           <p class="getResult">=</p>
         </button>
       </section>
+
     </div>
   )
 }
