@@ -1,0 +1,7 @@
+.numberPad {
+    display: flex;
+    flex-wrap:wrap;
+    height: 500px;
+    margin-top: 10px;
+    background-color: aqua;
+}

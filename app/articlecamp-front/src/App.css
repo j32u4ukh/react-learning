@@ -35,13 +35,6 @@ body {
   text-align: right;
 }
 
-.numberPad {
-  display: flex;
-  flex-wrap:wrap;
-  height: 500px;
-  margin-top: 10px;
-}
-
 .button {
   border: 1px solid black;
   margin:2.5px;
