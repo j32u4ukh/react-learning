@@ -1,19 +1,19 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function HomePage(){
     const [data, setData] = useState(null);
 
-  useEffect(() => {
-    // 在這裡發送 GET 請求
-    axios.get('http://localhost:5000')
-      .then(response => {
-        setData(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching data: ', error);
-      });
-  }, []);
+    useEffect(() => {
+        // 在這裡發送 GET 請求
+        axios.get('http://localhost:5000')
+        .then(response => {
+            setData(response.data);
+        })
+        .catch(error => {
+            console.error('Error fetching data: ', error);
+        });
+    }, []);
 
     return (
         <div>
