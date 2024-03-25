@@ -24,7 +24,7 @@ services:
 
     environment:
       - MYSQL_DATABASE=${DB_NAME:-alphacamp}
-      - MYSQL_USER=${DB_USER:-root}
+      - MYSQL_USER=${DB_USER:-admin}
       - MYSQL_PASSWORD=${DB_PASSWORD:-password}
       - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD:-password}
       - MYSQL_ROOT_HOST=%
@@ -42,8 +42,8 @@ services:
   app:
     container_name: 'react-learning-app'
     build:
-      context: .
-      dockerfile: ./containers/js/Dockerfile    
+      context: ..
+      dockerfile: ./react-learning/containers/js/Dockerfile    
     ports:
       - target: 3000
         published: ${FRONT_PORT:-3000}
@@ -51,7 +51,7 @@ services:
         mode: host
     volumes:
       - type: bind
-        source: ./app
+        source: ../react-wysiwyg
         target: /usr/src/app
         consistency: delegated
     depends_on:
@@ -64,7 +64,7 @@ services:
       - DB_HOST=db
       - DB_PORT=3306
       - DB_DATABASE=${DB_NAME:-alphacamp}
-      - DB_USERNAME=${DB_USER:-root}
+      - DB_USERNAME=${DB_USER:-admin}
       - DB_PASSWORD=${DB_PASSWORD:-password}
     
     networks:
